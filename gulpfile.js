@@ -1,10 +1,10 @@
 const gulp = require('gulp')
 const less = require('gulp-less')
-const LessAutoprefix = require('less-plugin-autoprefix');
-const base64 = require('gulp-base64');
-const autoprefix = new LessAutoprefix({ browsers: ['Android >= 3.0', 'Firefox >= 10', 'IOS 6', 'last 3 Explorer versions', 'Opera >= 10'] });
-const postcss = require('gulp-postcss');
-const px2rem = require('postcss-px2rem');
+const LessAutoprefix = require('less-plugin-autoprefix')
+const base64 = require('gulp-base64')
+const autoprefix = new LessAutoprefix({ browsers: ['Android >= 3.0', 'Firefox >= 10', 'IOS 6', 'last 3 Explorer versions', 'Opera >= 10'] })
+const postcss = require('gulp-postcss')
+const px2rem = require('postcss-px2rem')
 const browserify = require('browserify')
 const babelify = require('babelify')
 const browserSync = require('browser-sync').create()
@@ -46,11 +46,11 @@ gulp.task('js', () => {
     })
     _browserify.add('./src/js/main.js')
     return (
-            _browserify
+        _browserify
             .transform(babelify)
             .bundle()
-            .pipe(fs.createWriteStream("./dist/js/app.js"))
-                )
+            .pipe(fs.createWriteStream('./dist/js/app.js'))
+    )
 })
 
 gulp.task('browserSync', done => {
